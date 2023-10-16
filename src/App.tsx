@@ -1,10 +1,11 @@
 import React from "react";
 import { ChakraProvider, Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import theme from "./theme";
 
 const App = () => {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Grid
         templateAreas={{
           base: `"nav" "main"`,
