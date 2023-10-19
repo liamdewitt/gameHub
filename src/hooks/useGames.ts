@@ -25,22 +25,28 @@ const useGames = () =>{
     //<Game[]> is needed to avoid the compilation error for the res response
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true)
     apiClient
       .get<FetchGamesResponse>("/games", {signal: controller.signal})
-      .then((res) => setGames(res.data.results))
+      .then((res) => {
+            setGames(res.data.results)
+            setLoading(false)
+        })
       .catch((err) => {
             // makes it so that error code: canceled, doesn't show
             if (err instanceof CanceledError) return;
             setError(err.message)
+            setLoading(false)
         });
         //clean up function 
       return () => controller.abort();
   }, []);
 
-  return {games, error};
+  return {games, error, isLoading};
 }
 
 export default useGames
