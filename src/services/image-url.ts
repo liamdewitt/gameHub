@@ -1,4 +1,5 @@
 const getCroppedImageUrl = (url: string) =>{
+    if (!url) return '';
     const target ='media/'
     // finds the index of 'm' of 'media/' then adds the length to make the slice where 'media/' ends 
     const index = url.indexOf(target) + target.length;
