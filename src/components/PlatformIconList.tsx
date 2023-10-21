@@ -17,7 +17,7 @@ interface Props {
   platforms: Platform[];
 }
 
-const PlatformIconList = ({ platforms }: Props) => {
+const PlatformIconList = ({ platforms = [] }: Props) => {
   // [key:string] is an index signature saying that a property (key) with any amount of keys of type string
   // 'IconType' is defined in the react-icons library
   const iconMap: { [key: string]: IconType } = {
