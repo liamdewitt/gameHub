@@ -5,3 +5,6 @@
 This project serves as an innovative web-based platform designed for exploring and uncovering captivating new video games. Game enthusiasts can effortlessly navigate through a plethora of gaming options by filtering them based on platforms, genres, and various other criteria.
 * This project was made showcasing React + Typescript using chakraUI as the library. I usually use bootstrap, so this was a fun change up.
 
+1/18/24 Dev Notes
+* I am currently learning React Query to add some more features to this project. Please do look forward to it!
+
